@@ -1,5 +1,25 @@
-import styles from './Options.module.css';
+export default function Options({
+  updateFeedback,
+  totalFeedback,
+  resetFeedback,
+}) {
+  return (
+    <div>
+      <button onClick={() => updateFeedback('good')} type="button">
+        Good
+      </button>
 
-export default function Options() {
-  return;
+      <button onClick={() => updateFeedback('neutral')} type="button">
+        Neutral
+      </button>
+
+      <button onClick={() => updateFeedback('bad')} type="button">
+        Bad
+      </button>
+
+      {totalFeedback > 0 && (
+        <button onClick={() => resetFeedback()}>Reset</button>
+      )}
+    </div>
+  );
 }
